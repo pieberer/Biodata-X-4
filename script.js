@@ -1,11 +1,22 @@
-const card = document.getElementById("image")
-const audio = new Audio("assets/test/vine-boom.mp3");
-
 console.log("i know you're here.")
 
-card.addEventListener("click", function() {
-    audio.play;
-    console.log("clicked");
-    console.log(audio)
-});
+function studentPage(id) {
+    //alert("hi " + id);
+    console.log(id)
 
+    window.location.href = "students/student.html";
+}
+
+
+let current = 0
+const slides = document.querySelectorAll(".carousel img")
+
+function showSlide(index) {
+    slides[current].classList.remove("active")
+    current = (index + slides.length) % slides.length
+    slides[current].classList.add("active")
+    console.log(current);
+}
+function changeSlide(dir) {
+    showSlide(current + dir)
+}
