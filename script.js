@@ -8,6 +8,18 @@ function studentPage(id) {
 }
 
 
+function isMobileDevice() {
+    return (
+        window.innerWidth < 768 &&
+        ('ontouchstart' in window || navigator.maxTouchPoints > 0)
+    );
+    }
+
+if (isMobileDevice()) {
+    alert("Tolong nyalakan mode desktop.")
+}
+
+
 let current = 0
 const slides = document.querySelectorAll(".carousel img")
 
