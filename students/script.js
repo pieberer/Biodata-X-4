@@ -1,5 +1,7 @@
 let dir = 'data/' + 1 + '.json'
 
+const aboutTemplate = ""
+
 async function load(id) {
     try {
         path = 'data/' + id + '.json'
@@ -9,19 +11,15 @@ async function load(id) {
             throw new Error(`HTTP error! Status: ${response.status}`);
         }
 
-        const data = await response.json()
+        data = await response.json()
 
-        console.log(path)
-        console.log(response)
-        console.log(data)
-
-        return data
+        document.getElementById("name").textContent = data.name
     } catch (err) {
         console.error(err)
     }
 }
+load(1)
 
-const data = load('1')
-
-document.getElementById('about').textContent = data.name
-console.log(data)
+function back() {
+    window.location.href = "../index.html";
+}
