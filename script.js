@@ -1,11 +1,13 @@
 console.log("i know you're here.")
 
-function studentPage(id) {
-    //alert("hi " + id);
+function studentPage(event) {
+    const id = event.target.dataset.id;
     console.log(id)
-
-    window.location.href = "students/student.html";
+    //window.location.href = "students/student.html?id=" + id;
 }
+document.querySelectorAll(".student-card").forEach(card => {
+    card.addEventListener("click", studentPage)
+})
 
 
 function isMobileDevice() {

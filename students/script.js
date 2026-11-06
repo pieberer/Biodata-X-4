@@ -1,25 +1,14 @@
-let dir = 'data/' + 1 + '.json'
+const id = new URLSearchParams(location.search).get("id") || 22
 
 const aboutTemplate = ""
 
-async function load(id) {
-    try {
-        path = 'data/' + id + '.json'
-        const response = await fetch(path)
+import { loadData } from "./data-handler.js";
 
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        data = await response.json()
-
-        document.getElementById("name").textContent = data.name
-    } catch (err) {
-        console.error(err)
-    }
-}
-load(1)
-
-function back() {
+document.getElementById("back").addEventListener("click", () => {
     window.location.href = "../index.html";
-}
+    console.log("back")
+})
+
+const data = await loadData(id)
+
+console.log(data)

@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="main-container">
-        <button onclick="back()">❮</button>
+        <button id="back">❮</button>
         <div class="secondary-container">
             <div>
                 <div class="card">
-                    <img src="../assets/test/guy1.jpg" alt="Foto Pelajar" id="image">
+                    <img id="photo" alt="Foto Pelajar" id="image">
                     <h4 id="name"></h4>
                 </div>
                 <div class="music">
@@ -35,11 +35,18 @@
         </div>
         <br>
         <h1 style="text-align: center;">My Gallery</h1>
-        <div class="secondary-container">
+        <div class="secondary-container" style="place-items: center;">
+            <p>photo</p>
+            <p>photo</p>
+        </div>
+        <h1 style="text-align: center;">My Creations</h1>
+        <div class="secondary-container" style="place-items: center;">
             <p>photo</p>
             <p>photo</p>
         </div>
     </div>
-    <script src="script.js"></script>
+    
+    <script type="module" src="script.js"></script>
+    <script type="module" src="data-handler.js"></script>
 </body>
 </html>
